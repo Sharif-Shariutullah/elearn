@@ -1,5 +1,7 @@
 import 'package:elearning/abc.dart';
 import 'package:elearning/apiCall.dart';
+import 'package:elearning/createUser.dart';
+import 'package:elearning/data_list.dart';
 import 'package:elearning/firebase_options.dart';
 import 'package:elearning/home.dart';
 import 'package:elearning/login.dart';
@@ -19,7 +21,7 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  @override
+  @override 
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -27,9 +29,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:
+  
+
+  initialRoute: "/signup",
+  routes: {
+    "/login" : (context) => loginAPI(),
+    "/home" : (context) => dataList(),
+    "/signup" : (context) => createUser(),
+  },
+  
+  //    home:
        //welcomingPage(),
-LoginScreen(),
+//LoginScreen(),
 
     );
   }

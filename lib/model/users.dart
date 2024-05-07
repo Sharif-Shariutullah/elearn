@@ -1,4 +1,9 @@
-class user {
+import 'dart:convert';
+
+List<Users> userFromJson(String str) =>
+    List<Users>.from(json.decode(str).map((x) => Users.fromJson(x)));
+
+class Users {
   int? id;
   String? username;
   String? email;
@@ -7,7 +12,7 @@ class user {
   String? userLastName;
   List<String>? roles;
 
-  user(
+  Users(
       {this.id,
       this.username,
       this.email,
@@ -16,7 +21,7 @@ class user {
       this.userLastName,
       this.roles});
 
-  user.fromJson(Map<String, dynamic> json) {
+  Users.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     username = json['username'];
     email = json['email'];
