@@ -1,5 +1,7 @@
 import 'package:elearning/abc.dart';
+import 'package:elearning/add_image.dart';
 import 'package:elearning/apiCall.dart';
+import 'package:elearning/createUpdateDelete.dart';
 import 'package:elearning/createUser.dart';
 import 'package:elearning/data_list.dart';
 import 'package:elearning/firebase_options.dart';
@@ -31,11 +33,13 @@ class MyApp extends StatelessWidget {
       ),
   
 
-  initialRoute: "/signup",
+  initialRoute: "/addImage",
   routes: {
     "/login" : (context) => loginAPI(),
     "/home" : (context) => dataList(),
     "/signup" : (context) => createUser(),
+    "/crud" : (context) => FormPage2(),
+    "/addImage" : (context) => AddImage(),
   },
   
   //    home:
